@@ -27,6 +27,7 @@
                         <option value="3">ELF ENE</option>
                         <option value="4">SM</option>
                         <option value="5">RF</option>
+                        <option value="6">DL</option>
                     </select>
                 </div>
 
@@ -77,6 +78,9 @@
                 case '5':
                     calcularRF(Number(document.getElementById('userPointsInput').value));
                     break;
+                case '6':
+                    calcularDL(Number(document.getElementById('userPointsInput').value));
+                    break;
                     
             }
         }
@@ -126,6 +130,17 @@
             return;
         }
 
+        function calcularDL(puntos) {
+            let fuerza = Math.round(puntos * 0.12);
+            let agilidad = Math.round(puntos * 0.18);
+            let vitalidad = Math.round(puntos * 0.06);
+            let energia = Math.round(puntos * 0.24);
+            let comando = Math.round(puntos * 0.39);
+            preElement.innerHTML = "Fuerza: " + fuerza + "\nAgilidad: " + agilidad + "\nVitalidad: " + vitalidad + "\nEnergia: " + energia;
+            return;
+        }
+
+        
 
     </script>
 </body>
