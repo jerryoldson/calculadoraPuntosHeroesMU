@@ -33,7 +33,7 @@
 
                 <input id="userPointsInput" placeholder="Puntos..." type="text" class="form-control"
                     aria-label="Text input with dropdown button">
-                <button onclick="calcular()" type="button" class="btn btn-danger">Calcular</button>
+                <button id="btn" onclick="calcular()" type="button" class="btn btn-danger">Calcular</button>
             </div>
         </div>
 
@@ -51,10 +51,19 @@
 
         var opcselected = '0';
         var preElement = document.getElementById('resultado');
+        var input = document.getElementById('userPointsInput');
+        input.addEventListener("keypress", function (event) {
+            if (event.key === "Enter") {
+                event.preventDefault();
+                document.getElementById("btn").click();
+            }
+        });
 
         function flag(value) {
             opcselected = value;
         }
+
+
 
         function calcular() {
             switch (opcselected) {
@@ -81,7 +90,7 @@
                 case '6':
                     calcularDL(Number(document.getElementById('userPointsInput').value));
                     break;
-                    
+
             }
         }
 
@@ -140,7 +149,7 @@
             return;
         }
 
-        
+
 
     </script>
 </body>
