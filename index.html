@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Calculadora Puntos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous" />
+</head>
+
+<body style="background-color: #212529;">
+    <div class="container-fluid text-danger">
+        <div class="d-flex justify-content-center">
+            <h1 class="center text-white">Calculadora de puntos Heroes MU</h1>
+        </div>
+
+        <div>
+            <p>Elegir clase y puntos a repartir</p>
+
+            <div class="input-group mb-3">
+                <div class="col-1">
+                    <select class="form-select" id="inputGroupSelect01" onchange="flag(this.value)">
+                        <option value="0" selected>Clase...</option>
+                        <option value="1">DK</option>
+                        <option value="2">ELF AGI</option>
+                        <option value="3">ELF ENE</option>
+                        <option value="4">SM</option>
+                        <option value="5">RF</option>
+                    </select>
+                </div>
+
+                <input id="userPointsInput" placeholder="Puntos..." type="text" class="form-control"
+                    aria-label="Text input with dropdown button">
+                <button onclick="calcular()" type="button" class="btn btn-danger">Calcular</button>
+            </div>
+        </div>
+
+
+        <pre id="resultado"></pre>
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"
+        integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS"
+        crossorigin="anonymous"></script>
+    <script>
+
+        var opcselected = '0';
+        var preElement = document.getElementById('resultado');
+
+        function flag(value) {
+            opcselected = value;
+        }
+
+        function calcular() {
+            switch (opcselected) {
+                case '0':
+                    preElement.innerHTML = "No ha seleccionado una clase."
+                    break;
+
+                case '1':
+                    calcularDK(Number(document.getElementById('userPointsInput').value));
+                    break;
+                case '2':
+                    calcularELFAGI(Number(document.getElementById('userPointsInput').value));
+                    break;
+
+                case '3':
+                    calcularELFENE(Number(document.getElementById('userPointsInput').value));
+                    break;
+                case '4':
+                    calcularSM(Number(document.getElementById('userPointsInput').value));
+                    break;
+                case '5':
+                    calcularRF(Number(document.getElementById('userPointsInput').value));
+                    break;
+                    
+            }
+        }
+
+        function calcularDK(puntos) {
+            let fuerza = Math.round(puntos * 0.4);
+            let agilidad = Math.round(puntos * 0.3);
+            let vitalidad = Math.round(puntos * 0.1);
+            let energia = Math.round(puntos * 0.2);
+            preElement.innerHTML = "Fuerza: " + fuerza + "\nAgilidad: " + agilidad + "\nVitalidad: " + vitalidad + "\nEnergia: " + energia;
+            return;
+        }
+
+        function calcularELFAGI(puntos) {
+            let fuerza = Math.round(puntos * 0.24);
+            let agilidad = Math.round(puntos * 0.64);
+            let vitalidad = Math.round(puntos * 0.1);
+            let energia = Math.round(puntos * 0.02);
+            preElement.innerHTML = "Fuerza: " + fuerza + "\nAgilidad: " + agilidad + "\nVitalidad: " + vitalidad + "\nEnergia: " + energia;
+            return;
+        }
+
+        function calcularELFENE(puntos) {
+            let fuerza = Math.round(puntos * 0.02);
+            let agilidad = Math.round(puntos * 0.28);
+            let vitalidad = Math.round(puntos * 0.1);
+            let energia = Math.round(puntos * 0.6);
+            preElement.innerHTML = "Fuerza: " + fuerza + "\nAgilidad: " + agilidad + "\nVitalidad: " + vitalidad + "\nEnergia: " + energia;
+            return;
+        }
+
+        function calcularSM(puntos) {
+            let fuerza = Math.round(puntos * 0.02);
+            let agilidad = Math.round(puntos * 0.4);
+            let vitalidad = Math.round(puntos * 0.08);
+            let energia = Math.round(puntos * 0.5);
+            preElement.innerHTML = "Fuerza: " + fuerza + "\nAgilidad: " + agilidad + "\nVitalidad: " + vitalidad + "\nEnergia: " + energia;
+            return;
+        }
+
+        function calcularRF(puntos) {
+            let fuerza = Math.round(puntos * 0.07);
+            let agilidad = Math.round(puntos * 0.43);
+            let vitalidad = Math.round(puntos * 0.07);
+            let energia = Math.round(puntos * 0.43);
+            preElement.innerHTML = "Fuerza: " + fuerza + "\nAgilidad: " + agilidad + "\nVitalidad: " + vitalidad + "\nEnergia: " + energia;
+            return;
+        }
+
+
+    </script>
+</body>
+
+</html>
