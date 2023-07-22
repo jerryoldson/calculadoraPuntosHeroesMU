@@ -64,18 +64,18 @@ function calcular() {
     let puntosCalculados = calcularPuntos(input.value, opcselected);
 
     if (opcselected != '6') {
-        preElement.innerHTML = `Fuerza: ${puntosCalculados.fuerza}
-Agilidad: ${puntosCalculados.agilidad}
-Vitalidad: ${puntosCalculados.vitalidad}
-Energia: ${puntosCalculados.energia}`;
+        preElement.innerHTML = `    Fuerza: ${puntosCalculados.fuerza}
+    Agilidad: ${puntosCalculados.agilidad}
+    Vitalidad: ${puntosCalculados.vitalidad}
+    Energia: ${puntosCalculados.energia}`;
     }
 
     else {
-        preElement.innerHTML = `Fuerza: ${puntosCalculados.fuerza}
-Agilidad: ${puntosCalculados.agilidad}
-Vitalidad: ${puntosCalculados.vitalidad}
-Energia: ${puntosCalculados.energia}
-Comando: ${puntosCalculados.comando}`;
+        preElement.innerHTML = `        Fuerza: ${puntosCalculados.fuerza}
+        Agilidad: ${puntosCalculados.agilidad}
+        Vitalidad: ${puntosCalculados.vitalidad}
+        Energia: ${puntosCalculados.energia}
+        Comando: ${puntosCalculados.comando}`;
         
     }
 
@@ -125,28 +125,36 @@ function calcularPuntos(puntos, raza) {
         let totalPorcentaje = 0;
         if (fuerza < maximo) {
             totalPorcentaje += porcentajes[raza].fuerza;
-            fuerza += Math.round(puntosSobrantes * (porcentajes[raza].fuerza / totalPorcentaje));
         }
         if (agilidad < maximo) {
             totalPorcentaje += porcentajes[raza].agilidad;
-            agilidad += Math.round(puntosSobrantes * (porcentajes[raza].agilidad / totalPorcentaje));
-
         }
         if (vitalidad < maximo) {
             totalPorcentaje += porcentajes[raza].vitalidad;
-            vitalidad += Math.round(puntosSobrantes * (porcentajes[raza].vitalidad / totalPorcentaje));
-
         }
         if (energia < maximo) {
             totalPorcentaje += porcentajes[raza].energia;
-            energia += Math.round(puntosSobrantes * (porcentajes[raza].energia / totalPorcentaje));
-
         }
 
         if (comando < maximo) {
             totalPorcentaje += porcentajes[raza].comando;
-            comando += Math.round(puntosSobrantes * (porcentajes[raza].comando / totalPorcentaje));
+        }
 
+        if (fuerza < maximo) {
+            fuerza += Math.round(puntosSobrantes * (porcentajes[raza].fuerza / totalPorcentaje));
+        }
+        if (agilidad < maximo) {
+            agilidad += Math.round(puntosSobrantes * (porcentajes[raza].agilidad / totalPorcentaje));
+        }
+        if (vitalidad < maximo) {
+            vitalidad += Math.round(puntosSobrantes * (porcentajes[raza].vitalidad / totalPorcentaje));
+        }
+        if (energia < maximo) {
+            energia += Math.round(puntosSobrantes * (porcentajes[raza].energia / totalPorcentaje));
+        }
+
+        if (comando < maximo) {
+            comando += Math.round(puntosSobrantes * (porcentajes[raza].comando / totalPorcentaje));
         }
     }
 
