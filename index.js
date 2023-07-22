@@ -64,18 +64,18 @@ function calcular() {
     let puntosCalculados = calcularPuntos(input.value, opcselected);
 
     if (opcselected != '6') {
-        preElement.innerHTML = `    Fuerza: ${puntosCalculados.fuerza}
-    Agilidad: ${puntosCalculados.agilidad}
-    Vitalidad: ${puntosCalculados.vitalidad}
-    Energia: ${puntosCalculados.energia}`;
+        preElement.innerHTML = `Fuerza: ${puntosCalculados.fuerza}
+Agilidad: ${puntosCalculados.agilidad}
+Vitalidad: ${puntosCalculados.vitalidad}
+Energia: ${puntosCalculados.energia}`;
     }
 
     else {
-        preElement.innerHTML = `        Fuerza: ${puntosCalculados.fuerza}
-        Agilidad: ${puntosCalculados.agilidad}
-        Vitalidad: ${puntosCalculados.vitalidad}
-        Energia: ${puntosCalculados.energia}
-        Comando: ${puntosCalculados.comando}`;
+        preElement.innerHTML = `Fuerza: ${puntosCalculados.fuerza}
+Agilidad: ${puntosCalculados.agilidad}
+Vitalidad: ${puntosCalculados.vitalidad}
+Energia: ${puntosCalculados.energia}
+Comando: ${puntosCalculados.comando}`;
         
     }
 
