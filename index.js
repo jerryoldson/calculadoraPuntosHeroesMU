@@ -49,7 +49,7 @@ var porcentajes = {
     agilidad: 0.18,
     vitalidad: 0.06,
     energia: 0.24,
-    comando: 0.39,
+    comando: 0.4,
   },
 };
 
